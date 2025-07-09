@@ -23,6 +23,11 @@ const modak = Modak({
 export const metadata: Metadata = {
   title: "Feliz Aniversário!",
   description: "Uma surpresa especial para você.",
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
