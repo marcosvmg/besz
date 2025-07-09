@@ -38,16 +38,16 @@ export default function CharacterSection({
   return (
     <section
       className="w-full flex flex-col overflow-hidden"
-      style={{ height: '100dvh' }} // ← unidade de viewport segura
+      style={{ height: '100dvh' }} // altura viewport segura
     >
       {/* HEADER */}
       <header
-        className={`relative flex-shrink-0 py-2 px-4 sm:px-8 text-center text-2xl sm:text-4xl text-white ${styles.titleBorder}`}
+        className={`relative flex-shrink-0 py-4 px-6 sm:px-8 text-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white ${styles.titleBorder}`}
         style={{ backgroundColor: styles.bg2 }}
       >
         <span style={{ fontFamily: 'var(--font-modak)' }}>{name}</span>
 
-        <div className="absolute left-4 sm:left-8 bottom-0 translate-y-1/2 z-20 w-28 h-14 sm:w-40 sm:h-20">
+        <div className="absolute left-4 sm:left-8 bottom-0 translate-y-1/2 z-20 w-28 h-14 sm:w-40 sm:h-20 md:w-56 md:h-28 lg:w-72 lg:h-36">
           <img
             src={decorationTop}
             alt={`Decoração superior de ${name}`}
@@ -61,15 +61,15 @@ export default function CharacterSection({
         className="flex-1 w-full overflow-hidden"
         style={{ backgroundColor: styles.bg }}
       >
-        <div className="w-full h-full p-4 sm:p-6 flex items-center justify-center">
-          <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div className="w-full h-full p-6 sm:p-8 flex items-center justify-center">
+          <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div
-              className={clsx('flex flex-col gap-3 text-center md:text-left', {
+              className={clsx('flex flex-col gap-4 text-center md:text-left', {
                 'md:order-last': !isEven,
               })}
             >
               <motion.h2
-                className="text-2xl sm:text-4xl font-semibold leading-tight"
+                className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight"
                 style={{ color: styles.subtitleColor }}
                 {...textAnimation}
               >
@@ -77,7 +77,7 @@ export default function CharacterSection({
               </motion.h2>
 
               <motion.p
-                className="text-sm font-semibold"
+                className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold"
                 style={{ color: styles.quoteColor }}
                 {...textAnimation}
                 transition={{ ...textAnimation.transition, delay: 0.2 }}
@@ -86,7 +86,7 @@ export default function CharacterSection({
               </motion.p>
 
               <motion.p
-                className="text-sm sm:text-base leading-snug"
+                className="text-sm sm:text-base md:text-lg lg:text-xl leading-snug"
                 style={{ color: styles.textColor }}
                 {...textAnimation}
                 transition={{ ...textAnimation.transition, delay: 0.4 }}
@@ -104,7 +104,7 @@ export default function CharacterSection({
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-              <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 overflow-hidden">
+              <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[36rem] lg:h-[36rem] overflow-hidden">
                 <Image
                   src={image}
                   alt={`Imagem de ${name}`}
@@ -119,10 +119,10 @@ export default function CharacterSection({
 
       {/* FOOTER */}
       <footer
-        className="relative flex-shrink-0 py-2 px-4 sm:px-8 text-center flex items-center justify-center"
+        className="relative flex-shrink-0 py-4 px-6 sm:px-8 text-center flex items-center justify-center"
         style={{ backgroundColor: styles.bg2 }}
       >
-        <div className="absolute right-4 sm:right-8 top-0 -translate-y-1/2 z-20 w-28 h-14 sm:w-40 sm:h-20">
+        <div className="absolute right-4 sm:right-8 top-0 -translate-y-1/2 z-20 w-28 h-14 sm:w-40 sm:h-20 md:w-56 md:h-28 lg:w-72 lg:h-36">
           <img
             src={decorationBottom}
             alt={`Decoração inferior de ${name}`}
@@ -131,11 +131,14 @@ export default function CharacterSection({
         </div>
 
         {isLastSection ? (
-          <p className="font-poppins text-sm sm:text-base" style={{ color: styles.titleColorVar }}>
+          <p
+            className="font-poppins text-sm sm:text-base md:text-lg lg:text-xl"
+            style={{ color: styles.titleColorVar }}
+          >
             feito com carinho &lt;3
           </p>
         ) : (
-          <div className="text-2xl sm:text-4xl">&nbsp;</div>
+          <div className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl">&nbsp;</div>
         )}
       </footer>
     </section>
