@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  /* Sunset Shimmer */
+  --color-sunset-s3: #D59D02;
+  --color-sunset-p3: #620912;
+  --color-sunset-p2: #DA052E;
+  --color-sunset-bg: #F7F2E3;
+  --color-sunset-bg2: #F7D77B;
+
+  /* Nightmare Moon */
+  --color-moon-s3: #3E50B4;
+  --color-moon-s2: #7698FE;
+  --color-moon-p1: #000000;
+  --color-moon-bg: #E3E8F7;
+  --color-moon-bg2: #7698FE;
+
+  /* Rarity */
+  --color-rarity-s2: #51BBE0;
+  --color-rarity-t3: #4B2564;
+  --color-rarity-p1: #CB689C;
+  --color-rarity-t2: #5E57A3;
+  --color-rarity-bg: #E8ECF0;
+  --color-rarity-bg2: #B2EBEE;
+
+  /* Pinkie Pie */
+  --color-pink-p2: #E57EB3;
+  --color-pink-s2: #C60070;
+  --color-pink-t1: #76C6E8;
+  --color-pink-s1: #EF4F91;
+  --color-pink-bg: #F8E8ED;
+  --color-pink-bg2: #F8B9CE;
+
+  /* Rainbow Dash */
+  --color-rainbow-p2: #77B0E0;
+  --color-rainbow-t2: #DBC911;
+  --color-rainbow-t3: #F37033;
+  --color-rainbow-s1: #F2599C;
+  --color-rainbow-bg: #E8EDF0;
+  --color-rainbow-bg2: #9EDBF9;
+
+  /* Marola */
+  --color-marola-p3: #5D8900;
+  --color-marola-p2: #9EEA00;
+  --color-marola-s1: #FEADAD;
+  --color-marola-bg: #EDF0E8;
+  --color-marola-bg2: #DEFF9B;
+}
+
+@layer utilities {
+  /* Estas classes agora podem ser removidas ou adaptadas,
+     mas vamos mantê-las pois o uso de var() já está correto. */
+  .text-stroke-sunset-s3 { -webkit-text-stroke: 6px var(--color-sunset-s3); paint-order: stroke ; }
+  .text-stroke-moon-s3 { -webkit-text-stroke: 6px var(--color-moon-s3); paint-order: stroke ; }
+  .text-stroke-rarity-s2 { -webkit-text-stroke: 6px var(--color-rarity-s2); paint-order: stroke ; }
+  .text-stroke-pink-p2 { -webkit-text-stroke: 6px var(--color-pink-p2); paint-order: stroke ; }
+  .text-stroke-rainbow-p2 { -webkit-text-stroke: 6px var(--color-rainbow-p2); paint-order: stroke ; }
+  .text-stroke-marola-p3 { -webkit-text-stroke: 6px var(--color-marola-p3); paint-order: stroke ; }
+}
+
+canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+}
+
+.section {
+  z-index: 0 !important;
+  background: transparent !important;
+}
+
+.fp-watermark {
+  display: none !important;
+}
