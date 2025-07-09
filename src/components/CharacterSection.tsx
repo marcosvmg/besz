@@ -36,7 +36,10 @@ export default function CharacterSection({
   }
 
   return (
-    <section className="w-full h-screen flex flex-col overflow-hidden">
+    <section
+      className="w-full flex flex-col overflow-hidden"
+      style={{ height: '100dvh' }} // ← unidade de viewport segura
+    >
       {/* HEADER */}
       <header
         className={`relative flex-shrink-0 py-2 px-4 sm:px-8 text-center text-2xl sm:text-4xl text-white ${styles.titleBorder}`}
@@ -53,20 +56,20 @@ export default function CharacterSection({
         </div>
       </header>
 
-      {/* CONTEÚDO COM SCROLL SE NECESSÁRIO */}
+      {/* CONTEÚDO */}
       <div
-        className="flex-1 w-full overflow-y-auto"
+        className="flex-1 w-full overflow-hidden"
         style={{ backgroundColor: styles.bg }}
       >
-        <div className="w-full min-h-full p-4 sm:p-6 flex items-center justify-center">
+        <div className="w-full h-full p-4 sm:p-6 flex items-center justify-center">
           <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div
-              className={clsx('flex flex-col gap-4 text-center md:text-left', {
+              className={clsx('flex flex-col gap-3 text-center md:text-left', {
                 'md:order-last': !isEven,
               })}
             >
               <motion.h2
-                className="text-3xl sm:text-5xl font-semibold"
+                className="text-2xl sm:text-4xl font-semibold leading-tight"
                 style={{ color: styles.subtitleColor }}
                 {...textAnimation}
               >
@@ -74,7 +77,7 @@ export default function CharacterSection({
               </motion.h2>
 
               <motion.p
-                className="text-base font-semibold"
+                className="text-sm font-semibold"
                 style={{ color: styles.quoteColor }}
                 {...textAnimation}
                 transition={{ ...textAnimation.transition, delay: 0.2 }}
@@ -83,7 +86,7 @@ export default function CharacterSection({
               </motion.p>
 
               <motion.p
-                className="text-sm sm:text-base"
+                className="text-sm sm:text-base leading-snug"
                 style={{ color: styles.textColor }}
                 {...textAnimation}
                 transition={{ ...textAnimation.transition, delay: 0.4 }}
@@ -101,7 +104,7 @@ export default function CharacterSection({
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-              <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-[22rem] md:h-[22rem] overflow-hidden">
+              <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 overflow-hidden">
                 <Image
                   src={image}
                   alt={`Imagem de ${name}`}
